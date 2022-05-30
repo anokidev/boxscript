@@ -147,7 +147,7 @@ var a_static_class = sclass = A;
 
 # -------------------------------------------
 
-# Void type, a variable without a value.
+# Null type, a variable without a value.
 var a_string: str; # This will throw an error, null type is not allowed.
 var a_string: str?: # This won't throw an error, essentially allowing the variable to be empty.
 
