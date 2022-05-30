@@ -1,0 +1,27 @@
+import println from "@stdlib/basic/stdout";
+
+# This is how you declare a function.
+
+[TYPE] [FUNCTION NAME]([PARAMETERS])
+{
+    [FUNCTION BODY]
+};
+
+str run(name: str, age: int)
+{
+    return f"Hello there, my name is ${name}. My age is ${str(age)}"
+};
+
+result: str = run("Anoki", 14);
+
+# How about returning multiple values?
+union<str, int> run()
+{
+    return "Anoki", 14
+};
+
+var name: str, age: int = run();
+
+# How about this?
+var result: union<str, int> = run();
+println(union[0]); # RESULT: "Anoki".

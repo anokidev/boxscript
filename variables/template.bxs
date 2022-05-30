@@ -1,0 +1,62 @@
+# You will be annoyed if this happened to you:
+var stuff: array<int, str, int, int, str> = [1, "a", 2, 3, "b"];
+
+# Introducing templates!
+
+# For an array, a tuple, or a union -- Use the list type.
+template for_an_array: list = </
+
+    int,
+    str,
+    str,
+    int,
+    str[2]
+
+/>
+
+var an_array: array<for_an_array> = [1, "a", "b", 2, "c", "d"];
+
+# Support for hash is also available! Via the object type.
+template for_a_hash: object = <//
+
+    name: str,
+    age: int,
+    gender: str,
+    married: bool
+
+//>
+
+var biodata: hash<for_a_hash> = {
+    name: "Anoki",
+    age: 14,
+    gender: "male",
+    married: false
+};
+
+# Templates are immutable.
+
+# But you might ask... What if I add a new item into a hash or an array
+# that uses templates?
+
+# Let's use the previous example.
+template for_a_hash: object = <//
+
+    name: str,
+    age: int,
+    gender: str,
+    married: bool
+
+\\>
+
+var biodata: hash<for_a_hash> = {
+    name: "Anoki",
+    age: 14,
+    gender: "male",
+    married: false
+};
+
+# If I do this:
+biodata.add("birth_city","Bandung");
+
+# The new item "birth_city" type is str.
+# The type is immutable, but I can change the value.

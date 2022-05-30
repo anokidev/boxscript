@@ -1,0 +1,61 @@
+import println from "@stdlib/basic/stdout";
+
+# You can set the modifier of a class item.
+
+#*
+
+    - private: Only can be accessed by every item of the same class.
+    - protected: Same as private, but an item from another class that 
+        extend the current class can access this variable.
+    - public: Anyone can access it.
+
+    - dynamic: Available if the class is initialized.
+    - static: Available even if the class is not initialized.
+
+    # Default modifier: public, static.
+
+*#
+
+# Dynamic vs static:
+
+class Example 
+{
+    static a = "A";
+    dynamic b = "B";
+};
+
+var example: dclass = Example();
+println(example.b); # Result: "B".
+println(example.a); # Error.
+
+var example: sclass = Example;
+println(example.a); # Result: "A";
+println(example.b); # Error.
+
+# Private.
+
+class Example 
+{
+
+    private priv: str = "A";
+    protected proc: str = "B";
+    public pub: str = "C";
+
+    private sample = ::a; # You can do that.
+
+};
+
+class Example_2 extend Example 
+{
+    private a: str = :::priv; # You can not do that.
+    private b: str = :::proc; # OK.
+    private c: str = :::pub; # OK.
+};
+
+class Example_3 
+{
+    private a: str = Example.priv; # You can not do that.
+    private b: str = Example.proc; # You can not do that too.
+    private c: str = Example.pub; # OK.
+};
+

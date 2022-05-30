@@ -1,0 +1,15 @@
+# NOTE: Read comment.bxs first!
+
+# BoxScript is an interpreted and statically typed language.
+# Technically, BoxScript is a Just-In-Time compiled language.
+
+# -------------------------------------------------------------
+
+# Import println from the stdout library.
+import println from "@stdlib/basic/stdout"
+
+# Print "Hello, world!".
+println("Hello, world!") # Semicolons are optional.
+
+# Except for more than 1 statement in 1 line.
+println("A statement") ; println("Another statement")

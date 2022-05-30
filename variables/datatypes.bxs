@@ -1,0 +1,154 @@
+import println from "@stdlib/basic/stdout";
+
+# There are a lot of datatypes.
+
+
+
+
+
+# -------------------------------------------
+
+# PRIMITIVE:
+
+# -------------------------------------------
+
+# Character, a character. You have to use SINGLE QUOTES!
+var a_char: char = 'a';
+
+# -------------------------------------------
+
+# String, a collection of characters.
+
+# Use double quotes for a single line string.
+var a_single_line_string: str = "This only requires a line."
+
+# Use backticks for a multiline string.
+var a_multiline_string: str = `
+
+This requires more than 1 line.
+This is a second line.
+
+`;
+
+# -------------------------------------------
+
+# Integer, basically base-10 numbers.
+var an_int: int = -100;
+
+# Use uint for an unsigned integer, basically integer but only positive values are allowed.
+var an_uint: uint = 100;
+
+# -------------------------------------------
+
+# Float, integer but with decimal points. Up to 15 decimal points are allowed.
+var a_float: float = -12334.234234;
+
+# ufloat is also available.
+var an_ufloat: ufloat = 12214.32423;
+
+# -------------------------------------------
+
+# Boolean, true or false?
+var a_bool: bool = true;
+var a_bool: bool = false;
+
+# -------------------------------------------
+
+
+
+
+
+# -------------------------------------------
+
+# COMPLEX: Any complex types use templates.
+
+# -------------------------------------------
+
+# Array, a collection of values.
+var an_array: array<str, int> = ["Anoki", 10];
+
+# Tips: Have multiple values that have the same type?
+var an_array: array<int[3], str> = [1, 2, 3, "AAA"];
+
+# Leave the square brackets empty if you don't know how many items have the same type.
+var an_array: array<int[], str> = [1, 2, 3, 4, "BBB"];
+
+# Leave the template empty if the array is empty.
+var an_array: array<> = [];
+
+# You can add a variable into a list.
+var a_variable: str = "Anoki";
+var an_array: array<str> = [a_variable];
+
+# -------------------------------------------
+
+# Tuple, same as array but the values are immmutable.
+var a_tuple: tuple<int[1], str> = (1, "CCC");
+
+# -------------------------------------------
+
+# Hash, a collection of values that each of them is tied into an object.
+var a_hash: hash<name: str, age: int> = {
+    name: "Anoki",
+    age: 10
+};
+
+# NOTE: The square brackets trick doesn't work for hash type.
+
+# Union. For multiple return values from a function.
+
+union<str, int> run()
+{
+    return "Anoki", 14
+};
+
+var name: str, age: int = run();
+
+# How about this?
+var result: union<str, int> = run();
+println(union[0]);
+
+# -------------------------------------------
+
+
+
+
+
+# -------------------------------------------
+
+# OTHER:
+
+# -------------------------------------------
+
+# Normal function.
+void run()
+{
+    return "LOL";
+};
+
+var a_function: fnc = run;
+
+# -------------------------------------------
+
+# Lamda function will be explained later on.
+var lamda_fnc: lamda = x: int -> x + 1;
+
+# -------------------------------------------
+
+# Class.
+
+class A {
+    dynamic init_var = "Initialized";
+    static static_var = "Static";
+};
+
+var a_dynamic_class: dclass = new A();
+var a_static_class = sclass = A; 
+
+# -------------------------------------------
+
+# Void type, a variable without a value.
+var a_string: str; # This will throw an error, null type is not allowed.
+var a_string: str?: # This won't throw an error, essentially allowing the variable to be empty.
+
+# -------------------------------------------

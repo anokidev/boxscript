@@ -1,0 +1,19 @@
+#!/bin/boxscript
+
+# This is a line comment.
+
+# We use hashtag as a marker for a comment so that we can use shebang.
+# Shebang (#!) is a method for making a file executable in UNIX OS.
+# The '/bin' part is the path of the interpreter.
+
+#*
+
+This is a block comment.
+You can write more than one line 
+of comments by using block comment.
+
+*#
+
+# You write the description of the file before the '---'.
+
+# -----------------------------------------

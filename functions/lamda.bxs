@@ -1,0 +1,14 @@
+import println from "@stdlib/basic/stdout";
+
+# How to declare a lamda / anonymous function:
+# [DECLARATION KEYWORD] [VARIABLE NAME]: lamda = [PARAMETERS] -> [RETURN VALUE];
+
+# This function add one into a number.
+var add_one: lamda = x: int -> x + 1;
+
+# You can use brackets.
+var add_one: lamda = (x: int) -> {x + 1};
+var add_one: lamda = (x: int) -> x + 1;
+var add_one: lamda = x: int -> {x + 1};
+
+println(run(1)) # Result: 2.

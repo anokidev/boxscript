@@ -1,0 +1,39 @@
+import println from "@stdlib/basic/stdout";
+
+# This is a class.
+
+class class_a 
+{
+    public name: str = "Anoki";
+    public age: int = 14;
+    public married: bool = false;
+    public another_name: str = ::name; # "Anoki"
+};
+
+# You can 'extend' a class.
+class class_b extend class_a 
+{
+    birth_city: str = "Bandung";
+    social_status: str= "rich";
+    public age: int = 15;
+    public another_age: int = :::another_name;
+};
+
+println(class_b.name); # Result: class_a;
+
+# You can initialize a class.
+class class_c 
+{
+    dynamic example: str = "Initialized!";
+
+    public void call()
+    {
+        println("Called!");
+    };
+};
+
+var c: dclass = new class_c();
+println(c.example); # Result: "Initialized!".
+
+# You can call a class.
+c(); # Result: "Called!".

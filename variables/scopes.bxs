@@ -1,0 +1,17 @@
+# Scope is an important concept.
+
+# This is a global variable.
+var a_global: str = "Available on global scope.";
+
+# A function.
+void a_function()
+{
+    # Trying to change the value of a global variable won't work.
+    var a_global: str = "Won't work";
+    # Instead this will create a local variable called 'a_global'.
+
+    # Use this to reference to a global variable.
+    global var a_global: str = "This will work!";
+
+    # Local variable is only available to a local scope.
+};

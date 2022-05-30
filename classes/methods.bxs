@@ -1,0 +1,35 @@
+import println from "@stdlib/basic/stdout";
+
+class Example {
+
+    # Method is a function inside a class.
+    public void test()
+    {
+        println("Hello there!");
+    };
+
+    # First special function is called constructor.
+    # This function will be triggered everytime the class is initialized.
+    # Return type must be 'dclass'. Otherwise the new initialized class is unusable.
+    public dclass constructor()
+    {
+        println("Initialized a class!");
+    };
+
+    # Second is called call.
+    # This function will be triggered everytime the initialized class is called.
+    # Return type can be anything.
+    public void call()
+    {
+        println("Called!");
+    };
+
+    # Third is called delete.
+    # This function will be triggered everytime the initialized class is deleted.
+    # Return type must be void. Return types beside void are ignored. 
+    public void delete()
+    {
+        println("Object is deleted.");
+    };
+
+};
