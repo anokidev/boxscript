@@ -12,4 +12,4 @@ import println from "@stdlib/basic/stdout"
 println("Hello, world!") # Semicolons are optional.
 
 # Except for more than 1 statement in 1 line.
-println("A statement") ; println("Another statement")
+println("A statement") ; println("Another statement");
